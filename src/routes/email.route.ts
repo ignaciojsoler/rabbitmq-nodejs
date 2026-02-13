@@ -1,14 +1,15 @@
 import { Router } from "express";
 import { sendMessage } from "../lib/rabbitmq";
+import { QUEUES } from "../constants";
 
 const emailRoute = Router();
 
 emailRoute.post("/email", (req, res) => {
   const { message } = req.body;
 
-  sendMessage("email", message);
+  sendMessage(QUEUES.EMAIL, JSON.stringify({ message }));
 
-  res.json({ message: "Message sent" });
+  res.json({ message: "Email sent to the queue" });
 });
 
 export { emailRoute };
