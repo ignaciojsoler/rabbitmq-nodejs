@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/ignaciojsoler/rabbitmq-nodejs#readme",
   "dependencies": {
+    "@types/amqplib": "^0.10.8",
+    "amqplib": "^0.10.9",
     "express": "^5.2.1",
     "tsx": "^4.21.0"
   },
